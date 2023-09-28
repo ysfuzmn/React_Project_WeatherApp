@@ -1,0 +1,71 @@
+.header-container {
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top:10%;
+}
+
+.forecast_container {
+    max-width: 1280px;
+    display: flex;
+    background-color: blueviolet;
+    flex-direction: row; 
+    padding-right: 5%;
+    padding-left: 5%;
+    justify-content: space-between;
+}
+
+.forecast, .forecast2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+}
+
+.forecast_hours, .forecast_hours2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast_hours p, .forecast_hours2 p {
+    margin-left: 2rem;
+    margin-bottom: 5rem;
+}
+hr{
+    max-width: 1280px;
+}
+
+
+
+@media (max-width: 768px) { 
+    .forecast_container {
+        flex-direction: column; 
+    }
+
+    .forecast, .forecast2 {
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%; 
+    }
+    hr{
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+    h4{
+        text-align: center;
+    }
+    .hourly_hr{
+        text-align: center;
+        
+    }
+    .daily_hr{
+       
+    }
+}
+
+
