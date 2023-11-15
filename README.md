@@ -1,1 +1,0 @@
-A simple application that shows instant, hourly and daily weather conditions using openweathermap API.
