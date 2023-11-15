@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 
-const API_KEY = "Your API Key";
+
+
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 
@@ -16,7 +17,7 @@ export const iconUrlFromCode = (code) => {
 
 export const fetchWeatherData = async (city) => {
   try {
-    const response = await fetch(`${BASE_URL}?q=${city}&appid=${API_KEY}`);
+    const response = await fetch(`${BASE_URL}?q=${city}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}`);
     if (!response.ok) {
       if (response.status === 404) {
         throw new Error('City not found');
@@ -37,7 +38,7 @@ const FORECAST_5D_3H_BASE_URL = "https://api.openweathermap.org/data/2.5/forecas
 
 export const fetch5Day3HourForecast = async (city) => {
   try {
-    const endpoint = `${FORECAST_5D_3H_BASE_URL}?q=${city}&appid=${API_KEY}`;
+    const endpoint = `${FORECAST_5D_3H_BASE_URL}?q=${city}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}`;
     const response = await fetch(endpoint);
 
     if (!response.ok) {
@@ -70,7 +71,7 @@ export const fetch5Day3HourForecast = async (city) => {
 
 export const getLocalTimeForCity = async (city) => {
   try {
-    const response = await fetch(`${BASE_URL}?q=${city}&appid=${API_KEY}`);
+    const response = await fetch(`${BASE_URL}?q=${city}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}`);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
